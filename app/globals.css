@@ -4,7 +4,7 @@
 
 body {
   /* font-family: var(--font-nunito); */
-  color: white;
+  color: rgb(222, 222, 222);
 }
 
 @layer utilities {

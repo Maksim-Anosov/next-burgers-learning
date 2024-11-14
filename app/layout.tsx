@@ -22,9 +22,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={cn('bg-slate-600', nunito.className)}>
-				<Header />
-				<main className="min-h-screen">{children}</main>
+			<body className={cn('bg-slate-600 min-h-screen font-bold', nunito.className)}>
+				<Header user={false}/>
+				<main className="">{children}</main>
 			</body>
 		</html>
 	);
