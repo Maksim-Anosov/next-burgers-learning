@@ -15,14 +15,14 @@ export const HeaderUI: React.FC<Props> = ({ className, user }) => {
       <Container className='flex justify-between items-center p-4'>
         <div className='flex items-center gap-4'>
           <Link
-            className='flex items-center gap-1 hover:scale-105 transition'
+            className='flex items-center gap-1 hover:scale-105 hover:text-primary transition'
             href='/'
           >
             <SquareMenu />
             <span>Конструктор</span>
           </Link>
           <Link
-            className='flex items-center gap-1 hover:scale-105 transition'
+            className='flex items-center gap-1 hover:scale-105 transition hover:text-primary'
             href='/'
           >
             <ListChecks />
@@ -30,18 +30,20 @@ export const HeaderUI: React.FC<Props> = ({ className, user }) => {
           </Link>
         </div>
 
-        <Link className='hover:scale-105 transition ' href='/'>
+        <Link className='hover:scale-105 transition flex items-center gap-2 text-2xl hover:text-primary' href='/'>
           {/* <BurgerIcon /> */}
+          <span>Space</span>
           <Image
             src={Burger}
             alt='burger-icon'
             width={100}
           />
-        </Link>
+          <span>Burger</span>
+          </Link>
 
         <div>
           <Link
-            className='flex items-center gap-1 hover:scale-105 transition'
+            className='flex items-center gap-1 hover:scale-105 transition hover:text-primary'
             href='/'
           >
             {user ? <UserCheck /> : <UserPlus />}
