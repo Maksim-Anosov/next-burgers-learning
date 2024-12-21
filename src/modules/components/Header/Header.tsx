@@ -1,4 +1,4 @@
-import { HeaderUI } from "@/src/shared";
+import { HeaderUI } from "../ui/headerUI";
 
 export function Header() {
   return <HeaderUI user={false} />;

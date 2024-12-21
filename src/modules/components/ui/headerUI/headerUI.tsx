@@ -1,15 +1,17 @@
 import Link from 'next/link';
 import { ListChecks, SquareMenu, UserCheck, UserPlus } from 'lucide-react';
 import { cn } from '@/src/shared/lib/utils';
-import { Container } from '../container';
 import Image from 'next/image';
 import Burger from '@/src/assets/burger.png';
-interface Props {
+import { Container } from '@/src/shared';
+import { FC } from 'react';
+
+interface HeaderUIProps {
   className?: string;
   user: boolean;
 }
 
-export const HeaderUI: React.FC<Props> = ({ className, user }) => {
+export const HeaderUI: FC<HeaderUIProps> = ({ className, user }) => {
   return (
     <header className={cn('shadow-2xl', className)}>
       <Container className='flex justify-between items-center p-4'>

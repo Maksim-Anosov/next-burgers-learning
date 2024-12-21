@@ -7,6 +7,18 @@
   color: rgb(222, 222, 222);
 } */
 
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
