@@ -9,23 +9,28 @@ import { FC } from 'react';
 interface HeaderUIProps {
   className?: string;
   user: boolean;
+  path: string;
 }
 
-export const HeaderUI: FC<HeaderUIProps> = ({ className, user }) => {
+export const HeaderUI: FC<HeaderUIProps> = ({ className, user, path }) => {
   return (
     <header className={cn('shadow-2xl', className)}>
       <Container className='flex justify-between items-center p-4'>
         <div className='flex flex-col gap-4'>
           <Link
-            className='flex items-center gap-1 hover:scale-105 hover:text-primary transition'
-            href='/'
+            className={cn(
+              'flex items-center gap-1 hover:scale-105 transition hover:text-primary', path === '/constructor' && 'text-primary scale-105'
+            )}
+            href='/constructor'
           >
             <SquareMenu />
             <span>Собрать бургер</span>
           </Link>
           <Link
-            className='flex items-center gap-1 hover:scale-105 transition hover:text-primary'
-            href='/'
+            className={cn(
+              'flex items-center gap-1 hover:scale-105 transition hover:text-primary', path === '/feed' && 'text-primary scale-105'
+            )}
+            href='/feed'
           >
             <ListChecks />
             <span>Лента заказов</span>
@@ -33,7 +38,9 @@ export const HeaderUI: FC<HeaderUIProps> = ({ className, user }) => {
         </div>
         <div>
           <Link
-            className='hover:scale-105 transition flex items-center gap-2 text-2xl hover:text-primary'
+            className={cn(
+              'flex items-center gap-1 hover:scale-105 transition hover:text-primary text-3xl', path === '/' && 'text-primary scale-105'
+            )}
             href='/'
           >
             <span>Space</span>
