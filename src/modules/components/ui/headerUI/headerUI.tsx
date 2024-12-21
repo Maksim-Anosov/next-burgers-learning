@@ -15,7 +15,7 @@ export const HeaderUI: FC<HeaderUIProps> = ({ className, user }) => {
   return (
     <header className={cn('shadow-2xl', className)}>
       <Container className='flex justify-between items-center p-4'>
-        <div className='flex gap-4'>
+        <div className='flex flex-col gap-4'>
           <Link
             className='flex items-center gap-1 hover:scale-105 hover:text-primary transition'
             href='/'
