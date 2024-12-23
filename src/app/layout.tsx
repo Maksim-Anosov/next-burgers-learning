@@ -22,11 +22,13 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
+			{/* <QueryClientProvider client={queryClient}> */}
 			<body
 				className={cn("bg-slate-200 h-screen font-bold", nunito.className)}>
 				<Header />
 				<main>{children}</main>
 			</body>
+			{/* </QueryClientProvider> */}
 		</html>
 	);
 }
