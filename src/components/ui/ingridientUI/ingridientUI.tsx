@@ -16,7 +16,7 @@ export const IngridientUI: FC<IngridientUIProps> = ({
 }) => {
   return (
     <li className='flex flex-col gap-2 items-center justify-between'>
-      <Link href='#' className='flex flex-col items-center gap-2'>
+      <Link href='/' className='flex flex-col items-center gap-2'>
         <Image src={image} alt='' width={200} height={200} />
         <p>{price}</p>
         <p className='text-center'>{name}</p>
