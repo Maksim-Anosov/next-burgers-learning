@@ -10,9 +10,7 @@ export function Ingridients() {
     queryFn: getIngredientsApi,
     staleTime: 5 * 60 * 1000
   });
-
-  console.log(data);
-
+  
   const buns = data?.data.filter(item => item.type === 'bun');
   const mains = data?.data.filter(item => item.type === 'main');
   const sauces = data?.data.filter(item => item.type === 'sauce');
