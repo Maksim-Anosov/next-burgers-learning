@@ -1,7 +1,7 @@
 'use client';
 
-import { usePathname } from "next/navigation";
-import { HeaderUI } from "../ui/headerUI";
+import { usePathname } from 'next/navigation';
+import { HeaderUI } from '../ui';
 
 export function Header() {
   const path = usePathname();

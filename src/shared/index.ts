@@ -1,2 +1,2 @@
-export * from './ui';
+export * from './ui-kit';
 export * from './lib';

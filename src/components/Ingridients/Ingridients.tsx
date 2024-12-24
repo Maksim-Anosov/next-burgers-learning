@@ -11,11 +11,16 @@ export function Ingridients() {
   });
 
   console.log(data);
-  
 
-  const buns = data?.data.filter((item) => item.type === 'bun');
-  const mains = data?.data.filter((item) => item.type === 'main');
-  const sauces = data?.data.filter((item) => item.type === 'sauce');
+  const buns = data?.data.filter(item => item.type === 'bun');
+  const mains = data?.data.filter(item => item.type === 'main');
+  const sauces = data?.data.filter(item => item.type === 'sauce');
 
-  return <IngridientsUI buns={buns ?? []} mains={mains ?? []} sauces={sauces ?? []} />;
+  return (
+    <IngridientsUI
+      buns={buns ?? []}
+      mains={mains ?? []}
+      sauces={sauces ?? []}
+    />
+  );
 }

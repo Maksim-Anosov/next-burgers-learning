@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
-import { Header } from "../modules";
+import { Header } from "../components";
 import { cn } from "../shared";
 
 const nunito = Nunito({

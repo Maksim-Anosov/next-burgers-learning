@@ -18,7 +18,7 @@ export const IngridientsUI: FC<IngridientsUIProps> = ({buns, sauces, mains}) => 
         <TabsTrigger value='sauce'>Соусы</TabsTrigger>
       </TabsList>
       <TabsContent value='bun'>
-        <ul className='grid grid-cols-2 gap-4'>
+        <ul className='grid grid-cols-3 gap-4'>
           {buns.map((bun) => (
             <IngridientUI
               key={bun._id}
@@ -30,7 +30,7 @@ export const IngridientsUI: FC<IngridientsUIProps> = ({buns, sauces, mains}) => 
         </ul>
       </TabsContent>
       <TabsContent value='main'>
-        <ul className='grid grid-cols-2 gap-4'>
+        <ul className='grid grid-cols-3 gap-4'>
           {mains.map((main) => (
             <IngridientUI
               key={main._id}
@@ -42,7 +42,7 @@ export const IngridientsUI: FC<IngridientsUIProps> = ({buns, sauces, mains}) => 
         </ul>
       </TabsContent>
       <TabsContent value='sauce'>
-        <ul className='grid grid-cols-2 gap-4'>
+        <ul className='grid grid-cols-3 gap-4'>
           {sauces.map((sauce) => (
             <IngridientUI
               key={sauce._id}

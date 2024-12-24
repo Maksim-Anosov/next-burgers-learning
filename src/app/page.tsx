@@ -1,4 +1,4 @@
-import { Carousel, Footer } from '../modules';
+import { Carousel, Footer } from '../components';
 
 export default function Home() {
   return (
