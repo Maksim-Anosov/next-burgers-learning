@@ -3,6 +3,7 @@ import { Nunito } from "next/font/google";
 import "./globals.css";
 import { Header } from "../components";
 import { cn } from "../shared";
+import { QueryProvider } from "../components/QueryClientProvider/QueryProvider";
 
 const nunito = Nunito({
 	subsets: ["cyrillic"],
@@ -22,13 +23,12 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			{/* <QueryClientProvider client={queryClient}> */}
-			<body
-				className={cn("bg-slate-200 h-screen font-bold", nunito.className)}>
-				<Header />
-				<main>{children}</main>
+			<body className={cn("bg-slate-200 h-screen font-bold", nunito.className)}>
+				<QueryProvider>
+					<Header />
+					<main>{children}</main>
+				</QueryProvider>
 			</body>
-			{/* </QueryClientProvider> */}
 		</html>
 	);
 }

@@ -7,7 +7,8 @@ import { getIngredientsApi } from '@/src/shared/api/burger-api';
 export function Ingridients() {
   const { data } = useQuery({
     queryKey: ['ingridients'],
-    queryFn: getIngredientsApi
+    queryFn: getIngredientsApi,
+    staleTime: 5 * 60 * 1000,
   });
 
   console.log(data);
