@@ -8,7 +8,7 @@ export function Ingridients() {
   const { data } = useQuery({
     queryKey: ['ingridients'],
     queryFn: getIngredientsApi,
-    staleTime: 5 * 60 * 1000,
+    staleTime: 5 * 60 * 1000
   });
 
   console.log(data);
@@ -22,6 +22,7 @@ export function Ingridients() {
       buns={buns ?? []}
       mains={mains ?? []}
       sauces={sauces ?? []}
+      addIngridient={() => console.log('addIngridient')}
     />
   );
 }

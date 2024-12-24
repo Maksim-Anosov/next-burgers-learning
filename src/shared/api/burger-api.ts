@@ -1,10 +1,3 @@
-// export const getIngredientsApi = () =>
-//   fetch(`${URL}/ingredients`)
-//     .then((res) => checkResponse<TIngredientsResponse>(res))
-//     .then((data) => {
-//       if (data?.success) return data.data;
-//       return Promise.reject(data);
-
 import { TIngredient } from "@/src/types/types";
 
 const URL = process.env.NEXT_PUBLIC_API_URL;

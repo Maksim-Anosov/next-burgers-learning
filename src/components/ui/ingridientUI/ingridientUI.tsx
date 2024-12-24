@@ -1,20 +1,29 @@
-import { Button } from "@/src/shared";
-import Image from "next/image";
-import Link from "next/link";
-import { FC } from "react";
-import { TIngredient } from "@/src/types/types";
+import { Button } from '@/src/shared';
+import Image from 'next/image';
+import Link from 'next/link';
+import { FC } from 'react';
+import { TIngredient } from '@/src/types/types';
 
-type IngridientUIProps = Pick<TIngredient, 'image' | 'price' | 'name'>
+type IngridientUIProps = Pick<TIngredient, 'image' | 'price' | 'name'> & {
+  addIngridient: () => void;
+};
 
-export const IngridientUI: FC<IngridientUIProps> = ({image, price, name}) => {
+export const IngridientUI: FC<IngridientUIProps> = ({
+  image,
+  price,
+  name,
+  addIngridient
+}) => {
   return (
-    <li>
-      <Link href='#'>
-        <Image src={image} alt='' width={100} height={100} />
+    <li className='flex flex-col gap-2 items-center justify-between'>
+      <Link href='#' className='flex flex-col items-center gap-2'>
+        <Image src={image} alt='' width={200} height={200} />
         <p>{price}</p>
-        <p>{name}</p>
+        <p className='text-center'>{name}</p>
       </Link>
-      <Button>Добавить</Button>
+      <Button onClick={addIngridient} className='w-1/2'>
+        Добавить
+      </Button>
     </li>
-  )
-}
+  );
+};
