@@ -21,7 +21,7 @@ export const HeaderUI: FC<HeaderUIProps> = ({ className, user, path }) => {
             className={cn(
               'flex items-center gap-1 hover:scale-105 transition hover:text-primary', path === '/constructor' && 'text-primary scale-105'
             )}
-            href='/constructor'
+            href='/burger-constructor'
           >
             <SquareMenu />
             <span>Собрать бургер</span>
