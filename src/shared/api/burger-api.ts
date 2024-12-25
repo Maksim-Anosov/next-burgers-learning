@@ -14,10 +14,8 @@ type TIngredientsResponse = TServerResponse<{
 }>;
 
 export async function getIngredientsApi(): Promise<TIngredientsResponse> {
-  try {
-    const res = await fetch(`https://norma.nomoreparties.space/api/ingredients`);
+    const res = await fetch(`https://norma.nomoreparties.space/api/ingredients`, {
+      next: { revalidate: 3600 },
+    });
     return checkResponse<TIngredientsResponse>(res);
-  } catch (err) {
-    return Promise.reject(err);
-  }
 }
