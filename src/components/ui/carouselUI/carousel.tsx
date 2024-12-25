@@ -36,6 +36,8 @@ export const CarouselUI: FC<CarouselUIProps> = ({ className, images, delay=3000 
                 className='w-full h-full rounded-2xl object-cover'
                 src={image}
                 alt=''
+                width={800}
+                height={500}
               />
             </CarouselItem>
           ))}
