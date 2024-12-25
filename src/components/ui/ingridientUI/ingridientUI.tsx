@@ -1,18 +1,17 @@
+// 'use client'; будет клиентским, чтобы обработать кнопку добавить
+
 import { Button } from '@/src/shared';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 import { TIngredient } from '@/src/types/types';
 
-type IngridientUIProps = Pick<TIngredient, 'image' | 'price' | 'name'> & {
-  addIngridient: () => void;
-};
+type IngridientUIProps = Pick<TIngredient, 'image' | 'price' | 'name'>
 
 export const IngridientUI: FC<IngridientUIProps> = ({
   image,
   price,
-  name,
-  addIngridient
+  name
 }) => {
   return (
     <li className='flex flex-col gap-2 items-center justify-between'>
@@ -21,7 +20,7 @@ export const IngridientUI: FC<IngridientUIProps> = ({
         <p>{price}</p>
         <p className='text-center'>{name}</p>
       </Link>
-      <Button onClick={addIngridient} className='w-1/2'>
+      <Button variant='outline' className='w-1/2'>
         Добавить
       </Button>
     </li>

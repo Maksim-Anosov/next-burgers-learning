@@ -7,14 +7,12 @@ interface IngridientsUIProps {
   buns: TIngredient[];
   sauces: TIngredient[];
   mains: TIngredient[];
-  addIngridient: () => void
 }
 
 export const IngridientsUI: FC<IngridientsUIProps> = ({
   buns,
   sauces,
-  mains,
-  addIngridient
+  mains
 }) => {
   return (
     <Tabs defaultValue='bun' className='w-full'>
@@ -24,13 +22,13 @@ export const IngridientsUI: FC<IngridientsUIProps> = ({
         <TabsTrigger value='sauce'>Соусы</TabsTrigger>
       </TabsList>
       <TabsContent value='bun'>
-        <IngridientsListUI ingridients={buns} addIngridient={addIngridient} />
+        <IngridientsListUI ingridients={buns} />
       </TabsContent>
       <TabsContent value='main'>
-        <IngridientsListUI ingridients={mains} addIngridient={addIngridient} />
+        <IngridientsListUI ingridients={mains} />
       </TabsContent>
       <TabsContent value='sauce'>
-        <IngridientsListUI ingridients={sauces} addIngridient={addIngridient} />
+        <IngridientsListUI ingridients={sauces} />
       </TabsContent>
     </Tabs>
   );

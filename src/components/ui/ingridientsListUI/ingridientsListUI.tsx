@@ -4,12 +4,10 @@ import { IngridientUI } from '../ingridientUI';
 
 type IngridientsListUIProps = {
   ingridients: TIngredient[];
-  addIngridient: () => void;
 };
 
 export const IngridientsListUI: FC<IngridientsListUIProps> = ({
-  ingridients,
-  addIngridient
+  ingridients
 }) => {
   return (
     <ul className='grid grid-cols-3 gap-4'>
@@ -20,7 +18,6 @@ export const IngridientsListUI: FC<IngridientsListUIProps> = ({
             image={ingridient.image}
             price={ingridient.price}
             name={ingridient.name}
-            addIngridient={addIngridient}
           />
         );
       })}
