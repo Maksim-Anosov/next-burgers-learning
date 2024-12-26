@@ -1,4 +1,4 @@
-import { images } from '@/src/assets/carouselImages';
+import { images } from '@/public/assets/carouselImages';
 import { CarouselUI } from '../ui';
 
 export function Carousel() {

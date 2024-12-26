@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ListChecks, SquareMenu, UserCheck, UserPlus } from 'lucide-react';
 import { cn } from '@/src/shared/lib/utils';
 import Image from 'next/image';
-import Burger from '@/src/assets/burger.png';
+import Burger from '/public/assets/burger.png';
 import { Container } from '@/src/shared';
 import { FC } from 'react';
 
@@ -19,7 +19,7 @@ export const HeaderUI: FC<HeaderUIProps> = ({ className, user, path }) => {
         <div className='flex flex-col gap-4'>
           <Link
             className={cn(
-              'flex items-center gap-1 hover:scale-105 transition hover:text-primary', path === '/constructor' && 'text-primary scale-105'
+              'flex items-center gap-1 hover:scale-105 transition hover:text-primary', path === '/burger-constructor' && 'text-primary scale-105'
             )}
             href='/burger-constructor'
           >

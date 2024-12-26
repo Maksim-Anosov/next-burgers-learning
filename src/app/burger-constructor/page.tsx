@@ -1,4 +1,5 @@
 import { Ingridients } from '@/src/components';
+import { BurgerConstructorUI } from '@/src/components/ui/burgerConstructorUI/burgerConstructorUI';
 
 export default function Constructor() {
   return (
@@ -6,7 +7,9 @@ export default function Constructor() {
       <div className='w-1/2 p-4'>
         <Ingridients />
       </div>
-      <div className='w-1/2 p-4'>Constructor</div>
+      <div className='w-1/2 p-4'>
+        <BurgerConstructorUI />
+      </div>
     </section>
   );
 }
