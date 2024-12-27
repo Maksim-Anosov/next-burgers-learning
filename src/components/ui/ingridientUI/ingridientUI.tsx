@@ -6,12 +6,15 @@ import Link from 'next/link';
 import { FC } from 'react';
 import { TIngredient } from '@/src/types/types';
 
-type IngridientUIProps = Pick<TIngredient, 'image' | 'price' | 'name'>
+type IngridientUIProps = Pick<TIngredient, 'image' | 'price' | 'name'> & {
+  onClick: () => void;
+};
 
 export const IngridientUI: FC<IngridientUIProps> = ({
   image,
   price,
-  name
+  name,
+  onClick,
 }) => {
   return (
     <li className='flex flex-col gap-2 items-center justify-between'>
@@ -20,7 +23,7 @@ export const IngridientUI: FC<IngridientUIProps> = ({
         <p>{price}</p>
         <p className='text-center'>{name}</p>
       </Link>
-      <Button variant='outline' className='w-1/2'>
+      <Button onClick={onClick} variant='outline' className='w-1/2'>
         Добавить
       </Button>
     </li>
