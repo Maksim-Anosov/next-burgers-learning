@@ -14,7 +14,7 @@ export const useOrderStore = create(
     persist(
       immer<orderState>((set) => ({
         ingridients: [],
-        addIngridient: (ingridient: TIngredient) =>
+        addIngridient: (ingridient) =>
           set((state) => {
             state.ingridients.push(ingridient);
           }),

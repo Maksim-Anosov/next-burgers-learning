@@ -1,7 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/src/shared';
 import { TIngredient } from '@/src/types/types';
 import { FC } from 'react';
-import { IngridientsListUI } from '../ingridientsListUI';
+import { IngridientsList } from '../../IngridientsList';
 
 interface IngridientsUIProps {
   buns: TIngredient[];
@@ -22,13 +22,13 @@ export const IngridientsUI: FC<IngridientsUIProps> = ({
         <TabsTrigger value='sauce'>Соусы</TabsTrigger>
       </TabsList>
       <TabsContent value='bun'>
-        <IngridientsListUI ingridients={buns} />
+        <IngridientsList ingridients={buns} />
       </TabsContent>
       <TabsContent value='main'>
-        <IngridientsListUI ingridients={mains} />
+        <IngridientsList ingridients={mains} />
       </TabsContent>
       <TabsContent value='sauce'>
-        <IngridientsListUI ingridients={sauces} />
+        <IngridientsList ingridients={sauces} />
       </TabsContent>
     </Tabs>
   );
