@@ -1,31 +1,35 @@
+import { cn } from '@/src/shared';
 import Image from 'next/image';
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 interface ConstructorElementUIProps {
   text: string;
-  price: number;
-  thumbnail: string;
+  img: string;
+  className?: string;
+  zIndex?: number;
 }
 
 export const ConstructorElementUI: FC<ConstructorElementUIProps> = ({
   text,
-  price,
-  thumbnail
+  img,
+  className,
+  zIndex
 }) => {
-  console.log(thumbnail);
-
   return (
-    <div className='relative'>
+    <div
+      style={{ zIndex }}
+      className={cn(
+        'relative w-[300px] h-[30px] flex justify-center items-center',
+        className
+      )}
+    >
       <Image
-        // className='w-full h-full'
-        src={thumbnail}
-        alt=''
-        width={500}
-        height={500}
+        className='w-auto h-auto'
+        src={img}
+        alt={text}
+        width={200}
+        height={100}
       />
-      <p className='text-center absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]'>
-        {text} | {price}
-      </p>
     </div>
   );
 };

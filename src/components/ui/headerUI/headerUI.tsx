@@ -19,7 +19,8 @@ export const HeaderUI: FC<HeaderUIProps> = ({ className, user, path }) => {
         <div className='flex flex-col gap-4'>
           <Link
             className={cn(
-              'flex items-center gap-1 hover:scale-105 transition hover:text-primary', path === '/burger-constructor' && 'text-primary scale-105'
+              'flex items-center gap-1 hover:scale-105 transition hover:text-primary',
+              path === '/burger-constructor' && 'text-primary scale-105'
             )}
             href='/burger-constructor'
           >
@@ -28,7 +29,8 @@ export const HeaderUI: FC<HeaderUIProps> = ({ className, user, path }) => {
           </Link>
           <Link
             className={cn(
-              'flex items-center gap-1 hover:scale-105 transition hover:text-primary', path === '/feed' && 'text-primary scale-105'
+              'flex items-center gap-1 hover:scale-105 transition hover:text-primary',
+              path === '/feed' && 'text-primary scale-105'
             )}
             href='/feed'
           >
@@ -39,12 +41,19 @@ export const HeaderUI: FC<HeaderUIProps> = ({ className, user, path }) => {
         <div>
           <Link
             className={cn(
-              'flex items-center gap-1 hover:scale-105 transition hover:text-primary text-3xl', path === '/' && 'text-primary scale-105'
+              'flex items-center gap-1 hover:scale-105 transition hover:text-primary text-3xl',
+              path === '/' && 'text-primary scale-105'
             )}
             href='/'
           >
             <span>Space</span>
-            <Image src={Burger} alt='burger-icon' width={100} />
+            <Image
+              src={Burger}
+              alt='burger-icon'
+              width={80}
+              className='w-auto h-auto'
+              priority
+            />
             <span>Burger</span>
           </Link>
         </div>

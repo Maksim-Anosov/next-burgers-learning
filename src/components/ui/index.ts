@@ -4,3 +4,4 @@ export * from './footerUI';
 export * from './ingridientsUI';
 export * from './ingridientUI';
 export * from './constructorElementUI';
+export * from './burgerConstructorUI';

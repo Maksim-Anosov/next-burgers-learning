@@ -1,6 +1,4 @@
-import { Ingridients } from '@/src/components';
-import { BurgerConstructorUI } from '@/src/components/ui/burgerConstructorUI/burgerConstructorUI';
-
+import { BurgerConstructor, Ingridients } from '@/src/components';
 export default function Constructor() {
   return (
     <section className='flex'>
@@ -8,7 +6,7 @@ export default function Constructor() {
         <Ingridients />
       </div>
       <div className='w-1/2 p-4'>
-        <BurgerConstructorUI />
+        <BurgerConstructor />
       </div>
     </section>
   );

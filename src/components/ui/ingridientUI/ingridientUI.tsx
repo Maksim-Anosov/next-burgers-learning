@@ -22,7 +22,7 @@ export const IngridientUI: FC<IngridientUIProps> = ({
         <Image
           className='w-auto h-auto'
           src={image}
-          alt=''
+          alt={name}
           width={100}
           height={100}
         />
