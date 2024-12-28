@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 import { devtools } from 'zustand/middleware';
-import { persist } from 'zustand/middleware';
+// import { persist } from 'zustand/middleware';
 import { TIngredient } from '@/src/types/types';
 
 export type TIngredientWithZIndex = TIngredient & { zIndex: number };

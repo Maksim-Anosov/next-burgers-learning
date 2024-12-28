@@ -1,1 +1,1 @@
-export * from './Ingridient';
+// export * from './Ingridient';
