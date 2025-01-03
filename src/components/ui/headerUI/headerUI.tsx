@@ -60,7 +60,7 @@ export const HeaderUI: FC<HeaderUIProps> = ({ className, user, path }) => {
         <div>
           <Link
             className='flex gap-1 justify-center hover:scale-105 transition hover:text-primary min-w-[200px]'
-            href='/'
+            href='/signin'
           >
             {user ? <UserCheck /> : <UserPlus />}
             <span>{user ? 'Личный кабинет' : 'Войти'}</span>

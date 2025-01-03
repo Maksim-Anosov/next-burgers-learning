@@ -1,17 +1,7 @@
-import { TIngredient } from '@/src/types/types';
+import { TIngredientsResponse } from '@/src/types/types';
+import { checkResponse } from '../shared';
 
-const checkResponse = <T>(res: Response): Promise<T> =>
-  res.ok ? res.json() : res.json().then(err => Promise.reject(err));
-
-type TServerResponse<T> = {
-  success: boolean;
-} & T;
-
-type TIngredientsResponse = TServerResponse<{
-  data: TIngredient[];
-}>;
-
-export class ingridientService {
+export class IngridientService {
   static async getIngridients(): Promise<TIngredientsResponse> {
     const res = await fetch(
       `https://norma.nomoreparties.space/api/ingredients`,
