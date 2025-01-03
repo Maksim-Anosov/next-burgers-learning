@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
-import { Header, QueryProvider } from "../components";
+import { Header, Providers } from "../components";
 import { cn } from "../shared";
 
 const nunito = Nunito({
@@ -23,10 +23,12 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={cn("bg-slate-200 h-screen font-bold", nunito.className)}>
-				<QueryProvider>
+				<Providers>
 					<Header />
-					<main>{children}</main>
-				</QueryProvider>
+					<main>
+						{children}
+					</main>
+				</Providers>
 			</body>
 		</html>
 	);

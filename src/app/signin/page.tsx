@@ -7,21 +7,18 @@ import { Button } from '@/src/shared/ui-kit/button';
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage
 } from '@/src/shared/ui-kit/form';
 import { Input } from '@/src/shared/ui-kit/input';
-import { signIn } from '@/auth';
+import Link from 'next/link';
+import { signIn } from 'next-auth/react';
 
 const formSchema = z.object({
-  email: z
-    .string()
-    .includes('@', {
-      message: 'Email is required.'
-    }),
+  email: z.string().includes('@', {
+    message: 'Email is required.'
+  }),
   password: z
     .string()
     .min(2, {
@@ -41,39 +38,48 @@ export default function Signin() {
     }
   });
 
-  // function onSubmit(values: z.infer<typeof formSchema>) {
-  //   signIn(values);
-  // }
-
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    signIn('credentials', {
+      email: values.email,
+      password: values.password,
+      redirect: false
+    });
+  }
+  
   return (
     <Form {...form}>
-      <form className='space-y-8 max-w-[50vw] mx-auto my-8'>
-      <FormField
-        control={form.control}
-        name='email'
-        render={({ field }) => (
-          <FormItem>
-            <FormControl>
-              <Input placeholder='email' {...field} />
-            </FormControl>
-
-            <FormMessage />
-          </FormItem>
-        )}
-      />
-      <FormField
-        control={form.control}
-        name='password'
-        render={({ field }) => (
-          <FormItem>
-            <FormControl>
-              <Input placeholder='password' {...field} />
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
-      <Button type='submit'>Submit</Button>
+      <form
+      onSubmit={form.handleSubmit(onSubmit)} 
+      className='space-y-8 max-w-[50vw] mx-auto mt-[20vh] flex flex-col justify-center items-center'>
+        <FormField
+          control={form.control}
+          name='email'
+          render={({ field }) => (
+            <FormItem className='w-1/2'>
+              <FormControl>
+                <Input placeholder='почта' {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name='password'
+          render={({ field }) => (
+            <FormItem className='w-1/2'>
+              <FormControl>
+                <Input placeholder='пароль' {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button className='w-1/4' variant={'outline'} type='submit'>
+          Войти
+        </Button>
+        <Link className='transition hover:text-primary' href={'/signup'}>Зарегестрироваться</Link>
+        <Link className='transition hover:text-primary' href={'/forgot'}>Забыли пароль?</Link>
       </form>
     </Form>
   );
