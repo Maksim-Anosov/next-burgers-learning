@@ -1,6 +1,7 @@
 import NextAuth from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 import { AuthorizeService } from './src/services/authorizeService';
+// import { setCookie } from './src/shared';
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
@@ -20,13 +21,39 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         password: { label: 'Password', type: 'password', required: true }
       },
       async authorize(credentials) {
-        const res = await AuthorizeService.loginUser({
+        const data = await AuthorizeService.loginUser({
           email: credentials.email as string,
           password: credentials.password as string
         });
 
-        return res.user;
+        if (data.success) {
+          return {
+            email: data.user.email,
+            name: data.user.name,
+            accessToken: data.accessToken,
+            refreshToken: data.refreshToken
+          }
+        } else {
+          return null;
+        }
       }
     })
-  ]
+  ],
+  session: {
+    strategy: 'jwt'
+  },
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.accessToken = user.accessToken;
+        token.refreshToken = user.refreshToken;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      session.accessToken = token.accessToken as string
+      session.refreshToken = token.refreshToken as string
+      return session
+    }
+  }
 });
