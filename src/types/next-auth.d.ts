@@ -2,12 +2,12 @@ import { DefaultSession, DefaultUser } from "next-auth"
 import { JWT } from "next-auth/jwt"
 import { TUser } from "./types"
 
-
 declare module "next-auth" {
   interface Session extends DefaultSession {
     accessToken?: string
     refreshToken?: string
     error?: string
+    jwt: JWT
   }
 
   interface User extends DefaultUser {
