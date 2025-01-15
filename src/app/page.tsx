@@ -1,10 +1,10 @@
-import { Carousel, Footer } from '../components';
+import { Carousel } from '../components';
 
 export default function Home() {
   return (
     <>
       <Carousel />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

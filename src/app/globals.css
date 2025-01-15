@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
-  font-family: var(--font-nunito);
-  color: rgb(222, 222, 222);
-} */
-
 * {
 	padding: 0px;
 	margin: 0px;
@@ -16,6 +11,20 @@
 *::before,
 *::after {
 	box-sizing: border-box;
+}
+
+div::-webkit-scrollbar {
+  width: 5px;
+}
+
+div::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+div::-webkit-scrollbar-thumb {
+  background-color: #b9b9b9;
+  border-radius: 20px;
+  border: 2px solid transparent;
 }
 
 @layer utilities {
